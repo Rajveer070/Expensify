@@ -9,7 +9,6 @@ import {
 } from "../../utils/ApiRequest";
 import axios from "axios";
 import { Toast } from "react-bootstrap";
-import Details from "../Details/Details";
 import * as XLSX from "xlsx";
 import Swal from "sweetalert2";
 const toastOptions = {
@@ -42,34 +41,6 @@ const TableData = (props) => {
     }
   };
 
-  // const handleEditSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   // Show SweetAlert2 confirmation dialog
-  //   const result = await Swal.fire({
-  //     title: "Do you want to save the changes?",
-  //     showDenyButton: true,
-  //     showCancelButton: true,
-  //     confirmButtonText: "Save",
-  //     denyButtonText: `Don't save`,
-  //   });
-
-  //   if (result.isConfirmed) {
-  //     const { data } = await axios.put(`${editTransactions}/${currId}`, {
-  //       ...values,
-  //     });
-
-  //     if (data.success === true) {
-  //       await handleClose();
-  //       await setRefresh(!refresh);
-  //       window.location.reload();
-  //     } else {
-  //       console.log("error");
-  //     }
-  //   } else if (result.isDenied) {
-  //     Swal.fire("Changes are not saved", "", "info");
-  //   }
-  // };
   const handleEditSubmit = async (e) => {
     e.preventDefault();
 
@@ -223,7 +194,6 @@ const TableData = (props) => {
 
       if (data.success === true) {
         await setRefresh(!refresh);
-        // window.location.reload();
       } else {
         console.log("error");
       }
@@ -496,10 +466,6 @@ const TableData = (props) => {
                                     name="category"
                                     type="text"
                                     className="w-full mb-2 rounded-md border border-[#e0e0e0] bg-white py-2 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                                    // placeholder={
-                                    //   editingTransaction[0].category ||
-                                    //   editingTransaction[0].dbCategories
-                                    // }
                                     placeholder="Add New Category"
                                     value={values.category}
                                     onChange={handleChange}

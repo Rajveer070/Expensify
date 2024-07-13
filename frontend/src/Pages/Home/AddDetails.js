@@ -93,63 +93,6 @@ const AddDetails = () => {
     setType(e.target.value);
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   const {
-  //     title,
-  //     amount,
-  //     description,
-  //     category,
-  //     date,
-  //     transactionType,
-  //     currency,
-  //   } = values;
-
-  //   if (
-  //     !title ||
-  //     !amount ||
-  //     !description ||
-  //     !category ||
-  //     !date ||
-  //     !transactionType ||
-  //     !currency
-  //   ) {
-  //     toast.error("Please enter all the fields", toastOptions);
-  //   }
-  //   setLoading(true);
-
-  //   const { data } = await axios.post(addTransaction, {
-  //     title: title,
-  //     amount: amount,
-  //     description: description,
-  //     category: category,
-  //     date: date,
-  //     transactionType: transactionType,
-  //     currency: currency,
-  //     userId: cUser._id,
-  //   });
-
-  //   if (data.success === true) {
-  //     toast.success(data.message, toastOptions);
-  //     handleClose();
-  //     setRefresh(!refresh);
-  //     setValues({
-  //       title: "",
-  //       amount: "",
-  //       description: "",
-  //       category: "",
-  //       date: "",
-  //       transactionType: "",
-  //       currency: "",
-  //     });
-  //   } else {
-  //     toast.error(data.message, toastOptions);
-  //   }
-
-  //   setLoading(false);
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -179,7 +122,7 @@ const AddDetails = () => {
       title: title,
       amount: amount,
       description: description,
-      category: selectedCategory.name, // Pass the selected category name
+      category: selectedCategory.name,
       date: date,
       transactionType: transactionType,
       currency: currency,
@@ -321,7 +264,6 @@ const AddDetails = () => {
       setSelectedCategory(category);
     }
   };
-  // console.log(selectedCategory);
 
   const handleDeleteCategory = async () => {
     try {
@@ -416,12 +358,10 @@ const AddDetails = () => {
           },
           particles: {
             color: {
-              // value: "#1a7cb2",
               value: "#ffffff",
             },
             links: {
               color: "#1a7cb2",
-              // color:"#ffffff",
               distance: 150,
               enable: true,
               opacity: 0.5,

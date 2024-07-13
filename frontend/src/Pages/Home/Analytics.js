@@ -256,7 +256,6 @@ const Analytics = ({ transactions, categories }) => {
                 style={{
                   fontFamily: "San Francisco",
                   fontWeight: "bold",
-                  fontSize: "18px",
                 }}
               >
                 {categories.map((category) => {
