@@ -19,7 +19,7 @@ const port = process.env.PORT;
 connectDB();
 
 // const allowedOrigins = ["http://localhost:3000", ""] ;
-const allowedOrigins = ["https://expensify-client.vercel.app"];
+const allowedOrigins = ["http://localhost:3000"];
 
 app.use(express.json());
 app.use(
